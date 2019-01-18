@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-[ -n "$STDOUT_PIPE" ] && ! [ -p "$STDOUT_PIPE" ] && mkfifo -m 666 "$STDOUT_PIPE"
+for i in $@; do
+  [ -n "$i" ] && ! [ -p "$i" ] && mkfifo -m 666 "$i"
+done
 
-exec "$@"
+tail -F "$@"
