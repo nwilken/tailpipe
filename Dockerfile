@@ -1,7 +1,7 @@
-FROM alpine:3.8
+FROM alpine:3.10
 LABEL maintainer="Nate Wilken <wilken@asu.edu>"
 
-RUN apk update && apk add bash
+RUN apk update && apk --no-cache add bash
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod 555 /usr/local/bin/entrypoint.sh
