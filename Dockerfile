@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:latest
 LABEL maintainer="Nate Wilken <wilken@asu.edu>"
 
 RUN set -x && \
